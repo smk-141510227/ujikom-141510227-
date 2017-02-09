@@ -18,14 +18,14 @@ class lemburpegawaiController extends Controller
      */
     public function index()
     {
-         // $lembur=Lembur_pegawai::selectRaw("sum(lembur_pegawais.Jumlah_jam) as Jumlah_jam ,
+
+        // $lembur=Lembur_pegawai::selectRaw("sum(lembur_pegawais.Jumlah_jam) as Jumlah_jam ,
         //                                     lembur_pegawais.kode_lembur_id as kode_lembur_id,
         //                                     lembur_pegawais.pegawai_id as pegawai_id" )
         //                         ->groupBy('kode_lembur_id','pegawai_id')
         //                         ->get();
         $lembur=Lembur_pegawai::all();
         return view('lemburp.index',compact('lembur'));
-        //
     }
 
     /**
@@ -56,7 +56,8 @@ class lemburpegawaiController extends Controller
      */
     public function store(Request $request)
     {
-         $roles=[
+
+        $roles=[
             'pegawai_id'=>'required',
             'Jumlah_jam'=>'required',
         ];
@@ -88,7 +89,7 @@ class lemburpegawaiController extends Controller
             
             }
                 return redirect('error1');
-        //
+        }
     }
 
     /**
@@ -114,7 +115,6 @@ class lemburpegawaiController extends Controller
         $kategori=Kategori_lembur::all();
         $lembur=Lembur_pegawai::find($id);
         return view('lemburp.edit',compact('lembur','pegawai','kategori'));
-        //
     }
 
     /**
@@ -126,7 +126,7 @@ class lemburpegawaiController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $lembur=Lembur_pegawai::where('id',$id)->first();
+        $lembur=Lembur_pegawai::where('id',$id)->first();
         if($lembur['kode_lembur_id'] != Request('kode_lembur_id')){
             $roles=[
             'kode_lembur_id'=>'required',
@@ -157,7 +157,6 @@ class lemburpegawaiController extends Controller
         $lembur=Lembur_pegawai::find($id);
         $lembur->update($update);
         return redirect('lemburp');
-        //
     }
 
     /**
@@ -168,8 +167,8 @@ class lemburpegawaiController extends Controller
      */
     public function destroy($id)
     {
+
         $lembur=Lembur_pegawai::find($id)->delete();
         return redirect('lemburp');
-        //
     }
 }

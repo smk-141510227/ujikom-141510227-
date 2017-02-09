@@ -4,10 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class golongan extends Model
+class Golongan extends Model
 {
-    //
-     protected $table='golongans';
+    protected $table='golongans';
     protected $fillable=['id','kode_g','nama_g','besar_uang'];
 
     public function kategori_lembur(){
@@ -18,4 +17,5 @@ class golongan extends Model
     }
     public function pegawai(){
     	return $this->hasMany('App\Pegawai','golongan_id');
+    }
 }

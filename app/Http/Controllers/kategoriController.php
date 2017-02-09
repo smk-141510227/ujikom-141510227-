@@ -8,7 +8,6 @@ use Input;
 use App\Kategori_lembur;
 use App\Golongan;
 use App\Jabatan;
-
 class kategoriController extends Controller
 {
     /**
@@ -20,7 +19,6 @@ class kategoriController extends Controller
     {
         $kategori=Kategori_lembur::all();
         return view('kategori_lembur.index',compact('kategori'));
-        //
     }
 
     /**
@@ -33,7 +31,6 @@ class kategoriController extends Controller
         $golongan=Golongan::all();
         $jabatan=Jabatan::all();
         return view('kategori_lembur.create',compact('golongan','jabatan'));
-        //
     }
 
     /**
@@ -44,6 +41,7 @@ class kategoriController extends Controller
      */
     public function store(Request $request)
     {
+
         $rules=[
                 'kode_l'=>'required|unique:kategori_lemburs,kode_l',
                 'golongan_id'=>'required',
@@ -67,7 +65,6 @@ class kategoriController extends Controller
         $kategori=Request::all();
         Kategori_lembur::create($kategori);
         return redirect('kategori');
-        //
     }
 
     /**
@@ -89,11 +86,10 @@ class kategoriController extends Controller
      */
     public function edit($id)
     {
-        $golongan=Golongan::all();
+         $golongan=Golongan::all();
         $jabatan=Jabatan::all();
         $kategori=Kategori_lembur::find($id);
         return view('kategori_lembur.edit',compact('kategori','golongan','jabatan'));
-        //
     }
 
     /**
@@ -141,7 +137,6 @@ class kategoriController extends Controller
         $kategori=Kategori_lembur::find($id);
         $kategori->update($update);
         return redirect('kategori');
-        //
     }
 
     /**
@@ -154,6 +149,5 @@ class kategoriController extends Controller
     {
         $kategori=Kategori_lembur::find($id)->delete();
         return redirect('kategori');
-        //
     }
 }

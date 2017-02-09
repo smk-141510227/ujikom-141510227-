@@ -20,7 +20,6 @@ class tunjanganpController extends Controller
     {
         $tunjanganp=Tunjangan_pegawai::all();
         return view('tunjanganp.index',compact('tunjanganp'));
-        //
     }
 
     /**
@@ -41,7 +40,6 @@ class tunjanganpController extends Controller
         return view('tunjanganp.error2',compact('pegawai','tunjangan'));
         //
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -50,7 +48,8 @@ class tunjanganpController extends Controller
      */
     public function store(Request $request)
     {
-         $roles=[
+        
+        $roles=[
             'pegawai_id'=>'required',
         ];
         $sms=[
@@ -78,7 +77,7 @@ class tunjanganpController extends Controller
             
             }
                 return redirect('error2');
-        //
+        }
     }
 
     /**
@@ -104,7 +103,6 @@ class tunjanganpController extends Controller
         $tunjangan=Tunjangan::all();
         $pegawai=Pegawai::all();
         return view('tunjanganp.edit',compact('pegawai','tunjangan','tunjanganp'));
-        //
     }
 
     /**
@@ -134,7 +132,6 @@ class tunjanganpController extends Controller
         $tunjanganp=Tunjangan_pegawai::find($id);
         $tunjanganp->update($update);
         return redirect('tunjanganp');
-        //
     }
 
     /**
@@ -147,6 +144,5 @@ class tunjanganpController extends Controller
     {
         $tunjanganp=Tunjangan_pegawai::find($id)->delete();
         return redirect('tunjanganp');
-        //
     }
 }

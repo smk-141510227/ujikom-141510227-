@@ -4,9 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class kategori_lembur extends Model
+class Kategori_lembur extends Model
 {
-    //
     protected $table='kategori_lemburs';
     protected $fillable=['id','kode_l','jabatan_id','golongan_id','besar_uang'];
     public function golongan(){
@@ -17,4 +16,5 @@ class kategori_lembur extends Model
     }
     public function lembur_pegawai(){
     	return $this->hasMany('App\Lembur_pegawai','kode_lembur_id');
+    }
 }

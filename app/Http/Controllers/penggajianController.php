@@ -10,7 +10,7 @@ use App\Tunjangan_pegawai;
 use App\Pegawai;
 use App\Lembur_pegawai;
 
-class penggajianController extends Controller
+class PenggajianController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,7 +35,6 @@ class penggajianController extends Controller
          $lemburp=Lembur_pegawai::all();
         $tunjangan=Tunjangan_pegawai::all();
         return view('penggajian.result', compact('penggajian','pegawai','pegawaii','lemburp','tunjangan', 'query'));
-        //
     }
 
     /**
@@ -45,8 +44,7 @@ class penggajianController extends Controller
      */
     public function create()
     {
-         return view('penggajian.create');
-        //
+        return view('penggajian.create');
     }
 
     /**
@@ -60,9 +58,7 @@ class penggajianController extends Controller
         $penggajian=Request::all();
         Penggajian::create($penggajian);
         return redirect('penggajian');
-        //
     }
-
     /**
      * Display the specified resource.
      *

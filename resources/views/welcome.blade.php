@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@
             html, body {
                 background-color: #fff;
                 color: #636b6f;
-                font-family: 'Raleway', sans-serif;
+                font-family: 'Raleway';
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
@@ -66,15 +66,58 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
+             @if (Auth::guest())
+                    <div class="top-right links">
                         <a href="{{ url('/login') }}">Login</a>
                         <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
+                    </div>
+            @else
+                    <div class="top-right links">
+
+                        <a class="navbar-brand btn btn-success" href="{{ url('/golongan') }}">
+                            Golongan
+                        </a>
+                        <a class="navbar-brand btn btn-success" href="{{ url('/jabatan') }}">
+                            Jabatan
+                        </a>
+                        <a class="navbar-brand btn btn-success" href="{{ url('/kategori') }}">
+                            Kategori Lembur
+                        </a>
+                        <a class="navbar-brand btn btn-success" href="{{ url('/tunjangan') }}">
+                            Tunjangan
+                        </a>
+                        <a class="navbar-brand btn btn-success" href="{{ url('/pegawai') }}">
+                            Pegawai
+                        </a>
+                        <a class="navbar-brand btn btn-success" href="{{ url('/lemburp') }}">
+                            Lembur Pegawai
+                        </a>
+                        <a class="navbar-brand btn btn-success" href="{{ url('/tunjanganp') }}">
+                            Tunjangan Pegawai
+                        </a>
+                        <a class="navbar-brand btn btn-success" href="{{ url('/penggajian') }}">
+                            Penggajian
+                        </a>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ url('/logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                    </div>
             @endif
 
             <div class="content">

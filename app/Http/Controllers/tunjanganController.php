@@ -8,7 +8,6 @@ use Input;
 use App\Tunjangan;
 use App\Golongan;
 use App\Jabatan;
-
 class tunjanganController extends Controller
 {
     /**
@@ -20,7 +19,6 @@ class tunjanganController extends Controller
     {
         $tunjangan=Tunjangan::all();
         return view('tunjangan.index',compact('tunjangan'));
-        //
     }
 
     /**
@@ -33,7 +31,6 @@ class tunjanganController extends Controller
         $golongan=Golongan::all();
         $jabatan=Jabatan::all();
         return view('tunjangan.create',compact('golongan','jabatan'));
-        //
     }
 
     /**
@@ -44,7 +41,7 @@ class tunjanganController extends Controller
      */
     public function store(Request $request)
     {
-        $roles=[
+            $roles=[
                 'kode_t'=>'required|unique:tunjangans',
                 'jabatan_id'=>'required',
                 'golongan_id'=>'required',
@@ -67,7 +64,7 @@ class tunjanganController extends Controller
             $tunjangan=Request::all();
             Tunjangan::create($tunjangan);
             return redirect('tunjangan');
-        //
+        
     }
 
     /**
@@ -89,11 +86,10 @@ class tunjanganController extends Controller
      */
     public function edit($id)
     {
-        $golongan=Golongan::all();
+         $golongan=Golongan::all();
         $jabatan=Jabatan::all();
         $tunjangan=Tunjangan::find($id);
         return view('tunjangan.edit',compact('jabatan','golongan','tunjangan'));
-        //
     }
 
     /**
@@ -105,7 +101,7 @@ class tunjanganController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $tunjangan=Tunjangan::where('id',$id)->first();
+        $tunjangan=Tunjangan::where('id',$id)->first();
         if($tunjangan['kode_t'] != Request('kode_t')){
             $roles=[
                 'kode_t'=>'required|unique:tunjangans',
@@ -146,7 +142,6 @@ class tunjanganController extends Controller
             $tunjangan=Tunjangan::find($id);
             $tunjangan->update($update);
             return redirect('tunjangan');
-        //
     }
 
     /**
@@ -159,6 +154,5 @@ class tunjanganController extends Controller
     {
         $tunjangan=Tunjangan::find($id)->delete();
         return redirect('tunjangan');
-        //
     }
 }

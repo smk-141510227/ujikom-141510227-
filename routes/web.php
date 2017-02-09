@@ -5,12 +5,24 @@
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| This file is where you may define all of the routes that are handled
+| by your application. Just tell Laravel the URIs it should respond
+| to using a Closure or controller method. Build something great!
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+Route::get('/', 'HomeController@index');
+Route::get('about', 'HomeController@about');
+Route::resource('/golongan', 'golonganController');
+Route::resource('/jabatan', 'jabatanController');
+Route::resource('/pegawai', 'pegawaiController');
+Route::resource('/kategori', 'kategoriController');
+Route::resource('/lemburp','lemburpegawaiController');
+Route::resource('/error1','lemburpegawaiController@error1');
+Route::resource('/error2','tunjanganpController@error2');
+Route::resource('/tunjangan', 'tunjanganController');
+Route::resource('/tunjanganp', 'tunjanganpController');
+Route::resource('/penggajian', 'PenggajianController');
+Route::get('query', 'PenggajianController@search');
+Route::get('admin', 'AdminController@index');

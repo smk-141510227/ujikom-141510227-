@@ -21,7 +21,6 @@ class pegawaiController extends Controller
     {
         $pegawai=Pegawai::all();
         return view('pegawai.index',compact('pegawai'));
-        //
     }
 
     /**
@@ -31,11 +30,10 @@ class pegawaiController extends Controller
      */
     public function create()
     {
-        $golongan=Golongan::all();
+         $golongan=Golongan::all();
          $jabatan=Jabatan::all();
          $user=User::all();
         return view('pegawai.create',compact('golongan','jabatan','user'));
-        //
     }
 
     /**
@@ -46,7 +44,8 @@ class pegawaiController extends Controller
      */
     public function store(Request $request)
     {
-        $roles=[
+       
+ $roles=[
             'nip'=>'required|unique:pegawais',
             'jabatan_id'=>'required',
             'golongan_id'=>'required',
@@ -103,7 +102,8 @@ class pegawaiController extends Controller
                 $pegawai->photo=$filename;
                 $pegawai->save();
                 return redirect('pegawai');
-        //
+        }
+        
     }
 
     /**
@@ -130,7 +130,6 @@ class pegawaiController extends Controller
          $jabatan=Jabatan::all();
          $user=User::all();
         return view('pegawai.edit',compact('golongan','jabatan','user','pegawai'));
-        //
     }
 
     /**
@@ -142,7 +141,7 @@ class pegawaiController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $pegawai=Pegawai::where('id',$id)->first();
+        $pegawai=Pegawai::where('id',$id)->first();
         $user=User::where('id',$pegawai->user_id)->first();
         if($pegawai['nip'] != Request('nip') || $user['email'] != Request('email')){
             $roles=[
@@ -208,7 +207,8 @@ class pegawaiController extends Controller
             $pegawai->photo=$filename;
             $pegawai->update();
         return redirect('pegawai');
-        //
+        }
+
     }
 
     /**
@@ -224,6 +224,5 @@ class pegawaiController extends Controller
         $pegawai->delete();
 
         return redirect('pegawai');
-        //
     }
 }

@@ -17,7 +17,6 @@ class jabatanController extends Controller
     {
         $jabatan=Jabatan::all();
         return view('jabatan.index',compact('jabatan'));
-        //
     }
 
     /**
@@ -28,7 +27,6 @@ class jabatanController extends Controller
     public function create()
     {
         return view('jabatan.create');
-        //
     }
 
     /**
@@ -38,8 +36,7 @@ class jabatanController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-         // $this->validate($request,['kode_g' => 'required|unique:jabatans,kode_g',
+        // $this->validate($request,['kode_g' => 'required|unique:jabatans,kode_g',
     {
         //     'nama_g' => 'required','besar_uang' =>'required'
         //     ]);
@@ -62,7 +59,6 @@ class jabatanController extends Controller
         $jabatan=Request::all();
         Jabatan::create($jabatan);
         return redirect('jabatan');
-        //
     }
 
     /**
@@ -86,7 +82,6 @@ class jabatanController extends Controller
     {
         $jabatan=Jabatan::find($id);
         return view ('jabatan.edit',compact('jabatan'));
-        //
     }
 
     /**
@@ -125,7 +120,6 @@ class jabatanController extends Controller
         $jabatan=Jabatan::find($id);
         $jabatan->update($update);
         return redirect('jabatan');
-        //
     }
 
     /**
@@ -138,6 +132,5 @@ class jabatanController extends Controller
     {
         $jabatan=Jabatan::find($id)->delete();
         return redirect('jabatan');
-        //
     }
 }

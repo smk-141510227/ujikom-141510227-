@@ -6,7 +6,6 @@ use Request;
 use Input;
 use Validator;
 use App\Golongan;
-
 class golonganController extends Controller
 {
     /**
@@ -18,7 +17,6 @@ class golonganController extends Controller
     {
         $golongan=Golongan::all();
         return view('golongan.index',compact('golongan'));
-        //
     }
 
     /**
@@ -29,7 +27,6 @@ class golonganController extends Controller
     public function create()
     {
         return view('golongan.create');
-        //
     }
 
     /**
@@ -39,8 +36,7 @@ class golonganController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-         // $this->validate($request,['kode_g' => 'required|unique:golongans,kode_g',
+        // $this->validate($request,['kode_g' => 'required|unique:golongans,kode_g',
     {
         //     'nama_g' => 'required','besar_uang' =>'required'
         //     ]);
@@ -63,7 +59,6 @@ class golonganController extends Controller
         $golongan=Request::all();
         Golongan::create($golongan);
         return redirect('golongan');
-        
     }
 
     /**
@@ -87,7 +82,6 @@ class golonganController extends Controller
     {
         $golongan=Golongan::find($id);
         return view ('golongan.edit',compact('golongan'));
-        //
     }
 
     /**
@@ -131,7 +125,6 @@ class golonganController extends Controller
         $golongan=Golongan::find($id);
         $golongan->update($update);
         return redirect('golongan');
-        //
     }
 
     /**
@@ -142,8 +135,7 @@ class golonganController extends Controller
      */
     public function destroy($id)
     {
-         $golongan=Golongan::find($id)->delete();
+        $golongan=Golongan::find($id)->delete();
         return redirect('golongan');
-        //
     }
 }

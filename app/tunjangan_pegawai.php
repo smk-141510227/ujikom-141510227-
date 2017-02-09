@@ -4,10 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class tunjangan_pegawai extends Model
+class Tunjangan_pegawai extends Model
 {
-    //
-     protected $table='tunjangan_pegawais';
+    protected $table='tunjangan_pegawais';
     protected $fillable=['id','kode_tunjangan_id','pegawai_id '];
 
     public function tunjangan(){
@@ -18,4 +17,5 @@ class tunjangan_pegawai extends Model
     }
     public function penggajian(){
     	return $this->hasMany('App\Penggajian','tunjangan_pegawai_id');
+    }
 }
