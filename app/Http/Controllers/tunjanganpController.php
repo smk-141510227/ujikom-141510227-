@@ -16,6 +16,11 @@ class tunjanganpController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function __construct()
+    {
+        $this->middleware ('HRD');
+    }
+
     public function index()
     {
         $tunjanganp=Tunjangan_pegawai::all();
@@ -99,7 +104,7 @@ class tunjanganpController extends Controller
      */
     public function edit($id)
     {
-        $tunjanganpa=Tunjangan_pegawai::find($id);
+        $tunjanganp=Tunjangan_pegawai::find($id);
         $tunjangan=Tunjangan::all();
         $pegawai=Pegawai::all();
         return view('tunjanganp.edit',compact('pegawai','tunjangan','tunjanganp'));

@@ -3,10 +3,17 @@
     active
 @endsection
 @section('content')
-<h1>Daftar Jabatan</h1>
-	<table border="1" class="table table-striped table-border table-hover">
+
+<div class="panel panel-primary">
+                <div class="panel-heading"></div>
+                <div class="panel-body">
+                <h1><center>Daftar Jabatan</center></h1>
+<center><a  href="{{url('jabatan/create')}}" class="btn btn-success"><span class="fa fa-plus-circle"></span><br>Tambah</a></center>
+<hr>
+</hr>
+	<table border="1" class="table table-striped table-bordered table-hover">
 		<thead>
-			<tr>
+			<tr class="bg-success">
 				<th>No</th>
 				<th>Kode Jabatan</th>
 				<th>Nama Jabatan</th>
@@ -21,7 +28,7 @@
 				<td>{{$no++}}</td>
 				<td>{{$data->kode_j}}</td>
 				<td>{{$data->nama_j}}</td>
-				<td>{{$data->besar_uang}}</td>
+				<td><?php echo 'RP.'.number_format($data->besar_uang,2,",",".");?></td>
 				<td>
 					<a href="{{route('jabatan.edit',$data->id)}}" class='btn btn-warning'> Edit </a>
 				</td>
@@ -34,6 +41,8 @@
 			@endforeach
 		</tbody>
 	</table>
-	<a  href="{{url('jabatan/create')}}" class="btn btn-primary form-control">Tambah</a>
+	</div>
+	</div>
+	</div>
 
 @endsection

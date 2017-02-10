@@ -32,8 +32,8 @@
                                     <option value="">Pilih</option>
                                     <option value="Admin">Admin</option>
                                     <option value="HRD">HRD</option>
-                                    <option value="Bagian Keuangan">Bagian Keuangan</option>
-                                    <option value="Karyawan">Karyawan</option>
+                                    <option value="Bendahara">Bagian Keuangan</option>
+                                    <option value="Pegawai">Pegawai</option>
                                 </select>
                                 @if ($errors->has('type_user'))
                                     <span class="help-block">
@@ -84,7 +84,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="panel panel-primary">
+            <div class="panel panel-success">
                 <div class="panel-heading">
                     <div class="panel-title">Tambah Pegawai</div>
                 </div>
@@ -160,7 +160,9 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary form-control">
+                            <hr>
+                            </hr>
+                                <button type="submit" class="btn btn-success form-control">
                                     Simpan
                                 </button>
                             </div>

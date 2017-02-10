@@ -1,14 +1,11 @@
-@extends('layouts.app-login')
-@section('content')
+@extends('layouts.app')
 
-<h2>APeKa-Spectacular</h2>
-<img src="{{url('/image/internet.jpg')}}" class="img-circle" style="width:400px;height:400px;">
+@section('content')
 <div class="container">
     <div class="row">
-        <div class="md-8 col-md-offset-6">
-        <body bgcolor="yellow">
-
-                <div class="panel-heading"><div align="center">Ayo Login Sebelum Tidak Bisa Login</div></div>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Login</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
@@ -66,8 +63,6 @@
                 </div>
             </div>
         </div>
-        </div>
-        
     </div>
 </div>
 @endsection

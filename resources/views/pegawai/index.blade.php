@@ -28,7 +28,7 @@
 											<td>
 												
 											<div class="dropdown">
-							                    <a href="#" class="dropdown-toggle btn btn-primary" data-toggle="dropdown" role="button" aria-expanded="false">Lihat Photo <span class="caret"></span>
+							                    <a href="#" class="dropdown-toggle btn btn-success" data-toggle="dropdown" role="button" aria-expanded="false">Lihat Photo <span class="caret"></span>
 							                    </a>
 												<ul class="dropdown-menu" role="menu">
 													<img src="assets/image/{{$data->photo}}" width="200" height="200">
@@ -45,7 +45,7 @@
 			            </div>
 			        </div>
 			        <div class="col-md-6 ">
-			            <div class="panel panel-primary">
+			            <div class="panel panel-success">
 			                <div class="panel-heading">Data User</div>
 			                <div class="panel-body">
 			                	<table border="2" class="table table-success table-border table-hover">
@@ -80,7 +80,7 @@
 			                </div>
 			            </div>
 			        </div>
-					<a  href="{{url('pegawai/create')}}" class="btn btn-primary form-control">Tambah</a>
+					<a  href="{{url('pegawai/create')}}" class="btn btn-success form-control">Tambah</a>
 	
 
 @endsection

@@ -53,6 +53,8 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'Admin' => \App\Http\Middleware\Admin::class,
-
+        'Bendahara' => \App\Http\Middleware\Bendahara::class,
+        'HRD' => \App\Http\Middleware\HRD::class,
+        'Pegawai' => \App\Http\Middleware\Pegawai::class,
     ];
 }

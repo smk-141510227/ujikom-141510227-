@@ -1,13 +1,15 @@
 @extends('layouts.app')
+@section('tunjanganp')
+    active
+@endsection
 @section('content')
-<h1>Daftar Tunjangan Pegawai</h1>
+<h1><center>Daftar Tunjangan Pegawai</center></h1>
 	<table border="1" class="table table-striped table-border table-hover">
 		<thead>
-			<tr>
+			<tr class=bg-success>
 				<th>No</th>
 				<th>Kode Kategori Tunjangan</th>
 				<th>Nama Pegawai</th>
-				<th>Besar Uang</th>
 				<th colspan="2"><center>Action</center></th>
 			</tr>
 		</thead>
@@ -30,6 +32,6 @@
 			@endforeach
 		</tbody>
 	</table>
-	<a  href="{{url('tunjanganp/create')}}" class="btn btn-primary form-control">Tambah</a>
+	<a  href="{{url('tunjanganp/create')}}" class="btn btn-success form-control">Tambah</a>
 
 @endsection

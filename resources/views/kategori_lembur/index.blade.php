@@ -3,10 +3,10 @@
     active
 @endsection
 @section('content')
-<h1>Daftar Kategori Lembur</h1>
+<h1><center>Daftar Kategori Lembur</center></h1>
 	<table border="1" class="table table-striped table-border table-hover">
 		<thead>
-			<tr>
+			<tr class="bg-primary">
 				<th>No</th>
 				<th>Kode Kategori Lembur</th>
 				<th>Nama Golongan</th>
@@ -23,7 +23,7 @@
 				<td>{{$data->kode_l}}</td>
 				<td>{{$data->golongan->nama_g}}</td>
 				<td>{{$data->jabatan->nama_j}}</td>
-				<td>{{$data->besar_uang}}</td>
+				<td><?php echo 'RP.'.number_format($data->besar_uang,2,",",".");?></td>
 				<td>
 					<a href="{{route('kategori.edit',$data->id)}}" class='btn btn-warning'> Edit </a>
 				</td>
@@ -36,6 +36,6 @@
 			@endforeach
 		</tbody>
 	</table>
-	<a  href="{{url('kategori/create')}}" class="btn btn-primary form-control">Tambah</a>
+	<a  href="{{url('kategori/create')}}" class="btn btn-success form-control">Tambah</a>
 
 @endsection

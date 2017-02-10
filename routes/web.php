@@ -12,8 +12,8 @@
 */
 
 Auth::routes();
+
 Route::get('/', 'HomeController@index');
-Route::get('about', 'HomeController@about');
 Route::resource('/golongan', 'golonganController');
 Route::resource('/jabatan', 'jabatanController');
 Route::resource('/pegawai', 'pegawaiController');
@@ -25,4 +25,3 @@ Route::resource('/tunjangan', 'tunjanganController');
 Route::resource('/tunjanganp', 'tunjanganpController');
 Route::resource('/penggajian', 'PenggajianController');
 Route::get('query', 'PenggajianController@search');
-Route::get('admin', 'AdminController@index');

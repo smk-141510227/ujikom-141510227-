@@ -3,7 +3,7 @@
     active
 @endsection
 @section('content')
-<h1>Edit Pegawai</h1>
+<h1><center>Edit Pegawai</center></h1>
 	<div class="container">
     <div class="row">
         <div class="col-md-6">
@@ -58,9 +58,9 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="panel panel-primary">
+            <div class="panel panel-success">
                 <div class="panel-heading">
-                    <div class="panel-title">Tambah Pegawai</div>
+                    <div class="panel-title">Edit Pegawai</div>
                 </div>
                 <div class="panel-body">
                     <div class="form-group{{ $errors->has('nip') ? ' has-error' : '' }}">
@@ -152,7 +152,9 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary form-control">
+                            <hr>
+                            </hr>
+                                <button type="submit" class="btn btn-success form-control">
                                     Simpan
                                 </button>
                             </div>

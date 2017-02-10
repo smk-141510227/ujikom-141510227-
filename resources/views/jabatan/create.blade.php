@@ -3,11 +3,12 @@
     active
 @endsection
 @section('content')
+<h1><center>Tambah Jabatan</center></h1>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-warning">
-                <div class="panel-heading">Tambah Jabatan</div>
+            <div class="panel panel-primary">
+                <div class="panel-heading"></div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/jabatan') }}">
                         {{ csrf_field() }}
@@ -56,7 +57,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary form-control">
+                                <button type="submit" class="btn btn-success form-control">
                                     Simpan
                                 </button>
                             </div>

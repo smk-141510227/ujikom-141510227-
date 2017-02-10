@@ -3,11 +3,12 @@
     active
 @endsection
 @section('content')
+<h1><center>Tambah Lembur Pegawai</center></h1>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-primary">
-                <div class="panel-heading">Tambah Kategori Lembur</div>
+                <div class="panel-heading"></div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/lemburp') }}">
                         {{ csrf_field() }}
@@ -21,7 +22,7 @@
                                 <select name="pegawai_id" class="form-control">
                                     <option value="">pilih</option>
                                     @foreach($pegawai as $data)
-                                    <option value="{{$data->id}}">{{$data->nip}}</option>
+                                    <option value="{{$data->id}}">{{$data->user->name}} &nbsp;&nbsp;&nbsp;&nbsp;{{$data->nip}}</option></option>
                                     @endforeach
                                 </select>
 
@@ -32,7 +33,6 @@
                                 @endif
                             </div>
                         </div>
-
                        
                         <div class="form-group{{ $errors->has('Jumlah_jam') ? ' has-error' : '' }}">
                             <label for="Jumlah_jam" class="col-md-4 control-label">Jumlah_jam </label>
@@ -50,7 +50,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary form-control">
+                                <button type="submit" class="btn btn-success form-control">
                                     Simpan
                                 </button>
                             </div>

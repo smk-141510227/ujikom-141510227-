@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -37,14 +33,10 @@
     <link href="css/creative.min.css" rel="stylesheet">
 </head>
 <body>
-
-
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
-                    <div class="btn btn-warning">
-
-                <div class="navbar-brand">
+                <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
@@ -67,12 +59,11 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav nav-tabs">
-
+                      
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li role="presentation" class="active"><a href="{{ url('/login') }}">Login</a></li>
                         @else
-                       <li role="presentation" class="@yield('/')" ><a href="{{ url('/') }}">Home</a></li>
                         <li role="presentation" class="@yield('golongan')" ><a href="{{ url('/golongan') }}">Golongan</a></li>
                         <li role="presentation" class="@yield('jabatan')"><a href="{{ url('/jabatan') }}">Jabatan</a></li>
                         <li role="presentation" class="@yield('pegawai')"><a href="{{ url('/pegawai') }}">Pegawai</a></li>
@@ -81,7 +72,8 @@
                         <li role="presentation" class="@yield('tunjangan')"><a href="{{ url('/tunjangan') }}">Kategori Tunjangan</a></li>
                         <li role="presentation" class="@yield('tunjanganp')"><a href="{{ url('/tunjanganp') }}">Tunjangan Pegawai</a></li>
                         <li role="presentation" class="@yield('penggajian')"><a href="{{ url('/penggajian') }}">Penggajian</a></li>
-                                <li class="dropdown">
+
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -109,6 +101,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-15 col-md-offset-0">
+                    <div class="panel panel-success">
                         <div class="panel-body">
                             @yield('content')
                         </div>
