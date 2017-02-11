@@ -3,9 +3,14 @@
     active
 @endsection
 @section('content')
-<h1><center>Daftar Lembur Pegawai</center></h1>
-<center><a  href="{{url('lemburp/create')}}" class="btn btn-primary"><span class="fa fa-plus-circle"></span><br>Tambah</center></a>
-<hr></hr>
+<div class="panel panel-primary">
+                <div class="panel-heading"></div>
+                <div class="panel-body">
+                <h1><center>Daftar Lembur Pegawai</center></h1>
+<center><a  href="{{url('lemburp/create')}}" class="btn btn-success"><span class="fa fa-plus-circle"></span><br>Tambah</center></a>
+<hr>
+	
+</hr>
 	<table border="1" class="table table-striped table-bordered table-hover">
 		<thead>
 			<tr class="bg-success">

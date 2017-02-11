@@ -37,7 +37,11 @@
                         <td><b>@if($penggajian->tanggal_pengambilan == ""&&$penggajian->status_pengambilan == "0")
                             Gaji Belum Diambil
                         @elseif($penggajian->tanggal_pengambilan == ""||$penggajian->status_pengambilan == "0")
-                            Gaji Belum Diambil
+                        <center>
+                            
+                            Gaji Belum Diambil<br>
+                           <a class="btn btn-warning  " href="{{route('penggajian.edit',$penggajian->id)}}">Ubah Pengambilan</a>
+                        </center>
                         @else
                             Gaji Sudah Diambil Pada {{$penggajian->tanggal_pengambilan}}
                         @endif</b></td>

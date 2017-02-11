@@ -3,11 +3,18 @@
     active
 @endsection
 @section('content')
+<div class="panel panel-primary">
+                <div class="panel-heading"></div>
+                <div class="panel-body">
+                <h1><center>Daftar pegawai</center></h1>
+                <center><a  href="{{url('pegawai/create')}}" class="btn btn-success"><span class="fa fa-plus-circle"></span><br>Tambah</a></center>
+                <hr>
+</hr>
 			        <div class="col-md-6 col-md-offset-0">
-			            <div class="panel panel-primary">
+			            <div class="panel panel-success">
 			                <div class="panel-heading">Data Pegawai</div>
-			                <div class="panel-body">
-			                	<table border="2" class="table table-success table-border table-hover">
+			                <div class="panel-success">
+			                	<table border="2" class="table table-primary table-border table-hover">
 									<thead >
 										<tr>
 											<th>No</th>
@@ -44,11 +51,12 @@
 			                </div>
 			            </div>
 			        </div>
-			        <div class="col-md-6 ">
+			        <div class="col-md-6 col-md-offset-0">
 			            <div class="panel panel-success">
 			                <div class="panel-heading">Data User</div>
-			                <div class="panel-body">
-			                	<table border="2" class="table table-success table-border table-hover">
+			                <div class="panel-success">
+			                	<table border="2" class="table table-primary
+			                 table-border table-hover">
 									<thead >
 										<tr>
 											<th>Name</th>
@@ -80,7 +88,7 @@
 			                </div>
 			            </div>
 			        </div>
-					<a  href="{{url('pegawai/create')}}" class="btn btn-success form-control">Tambah</a>
+					
 	
 
 @endsection

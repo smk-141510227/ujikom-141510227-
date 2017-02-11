@@ -50,14 +50,19 @@ class tunjanganController extends Controller
                 'jabatan_id'=>'required',
                 'golongan_id'=>'required',
                 'besar_uang'=>'required',
+                'jumlah_anak'=>'required',
+                'status'=>'required',
+
             ];
             $sms=[
                 'kode_t.required'=>'jangan kosong',
                 'kode_t.unique'=>'jangan sama',
                 'jabatan_id.required'=>'jangan kosong',
                 'golongan_id.required'=>'jangan kosong',
+                'status.required'=>'jangan kosong',
+                'jumlah_anak.required'=>'jangan kosong',
                 'besar_uang.required'=>'jangan kosong',
-            ];
+                ];
             $validasi= Validator::make(Input::all(),$roles,$sms);
             if($validasi->fails()){
                 return redirect()->back()

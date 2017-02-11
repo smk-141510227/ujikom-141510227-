@@ -8,7 +8,7 @@
         <div class="col-md-6">
             <div class="panel panel-primary">
                 <div class="panel-heading">Tambah User</div>
-                <div class="panel-body">
+                <div class="panel-success">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/pegawai') }}" enctype='multipart/Form-data'>
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -84,7 +84,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="panel panel-success">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
                     <div class="panel-title">Tambah Pegawai</div>
                 </div>

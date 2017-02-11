@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="col-md-3 ">
-    <div class="panel panel-default">
+    <div class="panel panel-primary">
         <div class="panel-heading">
             <center>
                 <h3>APLIKASI</h3>

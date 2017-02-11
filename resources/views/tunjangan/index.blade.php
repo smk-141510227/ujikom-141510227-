@@ -3,7 +3,12 @@
     active
 @endsection
 @section('content')
-<h1><center>Daftar Kategori Tunjangan</center></h1>
+<div class="panel panel-primary">
+                <div class="panel-heading"></div>
+                <div class="panel-body">
+                <h1><center>Daftar Kategori Tunjangan</center></h1>
+                 <center><a  href="{{url('tunjangan/create')}}" class="btn btn-success"><span class="fa fa-plus-circle"></span><br>Tambah</a></center>
+                <hr>
 	<table border="1" class="table table-striped table-border table-hover">
 		<thead>
 			<tr class=bg-success>
@@ -40,6 +45,6 @@
 			@endforeach
 		</tbody>
 	</table>
-	<a  href="{{url('tunjangan/create')}}" class="btn btn-success form-control">Tambah</a>
+	
 
 @endsection

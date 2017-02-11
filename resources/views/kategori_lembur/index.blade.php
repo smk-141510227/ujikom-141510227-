@@ -3,10 +3,15 @@
     active
 @endsection
 @section('content')
-<h1><center>Daftar Kategori Lembur</center></h1>
+<div class="panel panel-primary">
+                <div class="panel-heading"></div>
+                <div class="panel-body">
+                <h1><center>Daftar Kategori Lembur</center></h1>
+                <center><a  href="{{url('kategori/create')}}" class="btn btn-success"><span class="fa fa-plus-circle"></span><br>Tambah</a></center>
+                <hr>
 	<table border="1" class="table table-striped table-border table-hover">
 		<thead>
-			<tr class="bg-primary">
+			<tr class="bg-success">
 				<th>No</th>
 				<th>Kode Kategori Lembur</th>
 				<th>Nama Golongan</th>
@@ -36,6 +41,6 @@
 			@endforeach
 		</tbody>
 	</table>
-	<a  href="{{url('kategori/create')}}" class="btn btn-success form-control">Tambah</a>
+	
 
 @endsection

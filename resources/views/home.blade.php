@@ -1,4 +1,4 @@
-@extends('layouts.apppp')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -8,8 +8,7 @@
                 <div class="panel-heading">SELAMAT DATANG</div>
 
                 <div class="panel-body">
-                   PERINGATAN
-                   &nbsp&nbsp HANYA ADMIN YANG BISA MENGAKSES SEMUA DATA
+                 PERINGATAN HANYA ADMIN YANG BISA MENGAKSES SEMUA DATA
                 </div>
             </div>
         </div>
